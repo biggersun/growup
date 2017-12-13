@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "test demo",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.2"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "webdriver": "^5.0.0-rc1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "xiaoxu",
+  "license": "ISC"
+}
