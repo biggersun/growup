@@ -1,7 +1,6 @@
 # growup
 record my growth path
 
-
 一、JavaScript 测试基础
 * mocha + should + node
 * karma
@@ -42,6 +41,7 @@ record my growth path
 七、学会性能测试对比
 * jsben.ch
 * benchmark.js
+
 八、基于缓存的前端性能优化
 * HTTP 缓存相关
 * LocalStorage
@@ -75,7 +75,3 @@ record my growth path
 * 常见的两种 CSRF 防范技术
 * XSS & 防范
 * 富文本 XSS 防范
-十三、BAT 一线大公司前端面试技巧
-* 面试中常用的题目和基本套路
-* 在面试中展现自己实力的一些建议
-* 情商和沟通能力提升思路
