@@ -2,8 +2,8 @@
 record my growth path
 
 一、JavaScript 测试基础
-* mocha + should + node
-* karma
+* mocha + chai + node
+* karma + mocha + chai + webpack
 
 二、JavaScript 难点选讲
 * 奇怪的 this

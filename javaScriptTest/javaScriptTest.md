@@ -75,11 +75,9 @@
 
 - should
 
-### 浏览器行为
+### webdirver浏览器行为
 
-- webDriver
-
-### 
+### karma(相当于测试手脚架)
 
 ## 断言
 
