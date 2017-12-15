@@ -25,7 +25,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack', 'coverage'],
+      'src/**/*.js': ['webpack'],
       'test/**/*.spec.js': ['webpack']
     },
 
@@ -43,7 +43,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress', 'coverage-istanbul'],
 
     // web server port
     port: 9876,
@@ -70,14 +70,27 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    coverageReporter: {
-      reporters:[
-        {type: 'html', dir: 'coverage/'},
-        {type: 'text-summary'}
-      ],
+    coverageIstanbulReporter: {
+      reports: [ 'text-summary' ],
+      fixWebpackSourcePaths: true
     },
 
-    webpack: webpackConfiguration,
+    webpack: {
+      ...webpackConfiguration,
+      module: {
+        rules: [
+            {
+                test: /\.js$|\.jsx$/,
+                exclude: /node_modules|\.spec\.js$/,
+                use: {
+                    loader: 'istanbul-instrumenter-loader',
+                    options: { esModules: true }
+                },
+                enforce: 'post',
+            }
+        ]
+      }
+    },
 
     webpackMiddleware: {},
   })
