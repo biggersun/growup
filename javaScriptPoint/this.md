@@ -18,15 +18,39 @@ this 对象是基于函数的 `执行环境` 绑定的（但是this不是函数�
 
 构造函数 初始化 属性 --> 涉及到 构造函数、作用域
 
-```javascript
-    function Constructor(name) {
-        this.name = name;
-        this.sayHi = () => {
-            alert('hi');
-        };
-    }
-```
 ### this 和 new 的关系
+我们来说`new`关键字做了什么，我们都知道`new`是用来创建实例对象的，同过下面这种方式
+
+```javascript
+function Constructor(name) {
+    this.name = name;
+    this.sayHi = () => {
+        alert('hi');
+    };
+}
+const obj = new Constructor('obj')
+```
+new 其实做了下面这些事    
+1. 创建一个新的对象    
+2. 将构造函数的执行环境和新的对象绑定    
+3. 执行函数体    
+4. 返回新的对象
+
+翻译成代码可以这样理解
+
+```javasript
+function Constructor(name) {
+	const obj = new Object();
+	obj.name = name;
+	obj.sayHi = () => {
+		alert('hi')
+	};
+	
+	return obj;
+}
+```
+前面我们说到,`this`是基于执行环境绑定的，上面的第二步实际上就是将函数`this`指向新对象，这就是`this`和`new`的关系
+
 ### this 和call(apply)的关系
 ### this 和箭头函数的关系
 
